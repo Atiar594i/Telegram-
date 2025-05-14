@@ -3,6 +3,7 @@ import { useState } from 'react';
 export default function Home() {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
+  const [additionalInfo, setAdditionalInfo] = useState('');
 
   const handleFormat = () => {
     const formatted = input
@@ -19,10 +20,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-blue-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
       
       {/* Header */}
-      <header className="bg-blue-800 text-white py-4 shadow-md text-center">
+      <header className="bg-gradient-to-r from-blue-900 to-purple-700 text-white py-4 shadow-md text-center">
         <p className="text-sm font-semibold">Made By: MD Atiar Khan Atik</p>
         <a
           href="https://t.me/atiar59"
@@ -36,12 +37,14 @@ export default function Home() {
 
       {/* Main Body */}
       <main className="flex-grow p-4 flex flex-col items-center">
-        <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl p-5 space-y-6">
-          <h1 className="text-xl font-bold text-center text-gray-700">📥 Telegram Number Formatter</h1>
+        <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl p-6 space-y-6">
+
+          {/* Heading */}
+          <h1 className="text-2xl font-bold text-center text-gray-700">📥 Telegram Number Formatter</h1>
 
           {/* Input Box */}
           <textarea
-            rows={6}
+            rows={8}
             className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
             placeholder="এখানে নাম্বারগুলো পেস্ট করো..."
             value={input}
@@ -65,6 +68,18 @@ export default function Home() {
               placeholder="Formatted নাম্বার এখানে দেখাবে..."
               value={output}
               readOnly
+            />
+          </div>
+
+          {/* Additional Info Box */}
+          <div>
+            <label className="block mb-1 text-gray-600 font-medium">ℹ️ Additional Information:</label>
+            <textarea
+              rows={4}
+              className="w-full p-4 border border-gray-300 bg-gray-50 rounded-xl text-sm"
+              placeholder="তোমার অতিরিক্ত তথ্য এখানে লিখতে পারো..."
+              value={additionalInfo}
+              onChange={(e) => setAdditionalInfo(e.target.value)}
             />
           </div>
 
