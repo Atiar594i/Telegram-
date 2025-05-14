@@ -22,11 +22,11 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-blue-100">
       {/* Header */}
-      <header className="w-full bg-black text-white py-4 shadow-md">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <span className="mr-4 font-medium">Made By: MD Atiar Khan Atik</span>
+      <header className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-4 shadow-md">
+        <div className="text-center px-4 text-sm sm:text-base">
+          <p className="font-semibold">Made By: MD Atiar Khan Atik</p>
           <a 
             href="https://t.me/atiar59" 
             target="_blank" 
@@ -38,52 +38,44 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="flex-grow flex flex-col items-center justify-center bg-gray-100 p-6">
-        <h1 className="text-3xl font-bold mb-6 text-gray-800">Telegram Number Formatter</h1>
-        
-        <textarea
-          className="w-full max-w-xl h-40 p-4 border rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
-          placeholder="এখানে নাম্বারগুলো পেস্ট করো, যেমনঃ 2694938590..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
+      {/* Main */}
+      <main className="flex-grow p-4 flex flex-col items-center">
+        <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 mt-6 space-y-4">
+          <h1 className="text-xl font-bold text-gray-800 text-center">📥 Telegram Number Formatter</h1>
+          
+          <textarea
+            className="w-full h-36 p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
+            placeholder="এখানে নাম্বারগুলো পেস্ট করো..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
 
-        <button
-          onClick={handleFormat}
-          className="mb-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-        >
-          ➕ Format with t.me/+
-        </button>
+          <button
+            onClick={handleFormat}
+            className="w-full py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition text-sm"
+          >
+            ➕ Format with t.me/+
+          </button>
 
-        <textarea
-          className="w-full max-w-xl h-60 p-4 border rounded mb-4 bg-white focus:outline-none focus:ring-2 focus:ring-green-600"
-          placeholder="Formatted output will appear here..."
-          value={output}
-          readOnly
-        />
+          <textarea
+            className="w-full h-36 p-3 border border-gray-300 rounded-xl bg-gray-50 text-sm"
+            placeholder="Formatted লিংক এখানে দেখাবে..."
+            value={output}
+            readOnly
+          />
 
-        <button
-          onClick={handleCopy}
-          className="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
-        >
-          📋 Copy All
-        </button>
+          <button
+            onClick={handleCopy}
+            className="w-full py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition text-sm"
+          >
+            📋 Copy All
+          </button>
+        </div>
       </main>
 
       {/* Footer */}
-      <footer className="w-full bg-black text-white py-4 shadow-inner">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <span className="mr-4 font-medium">Made By: MD Atiar Khan Atik</span>
-          <a 
-            href="https://t.me/atiar59" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="underline hover:text-gray-300"
-          >
-            https://t.me/atiar59
-          </a>
-        </div>
+      <footer className="bg-gray-800 text-white py-3 text-center text-xs sm:text-sm">
+        Made with ❤️ by <a href="https://t.me/atiar59" className="underline hover:text-gray-300" target="_blank">MD Atiar Khan Atik</a>
       </footer>
     </div>
   );

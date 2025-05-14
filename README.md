@@ -1,8 +1,8 @@
-# Telegram Formatter (Professional Version)
+# Telegram Formatter (Mobile Friendly Version)
 
-Paste numbers into the input box and get formatted links like `t.me/+123456789`. Styled professionally with header/footer.
+Paste numbers and get links like `t.me/+123456789`. Optimized for mobile view with professional card layout.
 
-## How to Run
+## Run Locally
 
 ```bash
 npm install
